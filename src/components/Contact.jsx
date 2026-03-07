@@ -3,9 +3,10 @@ import { motion, useInView } from "framer-motion";
 import locationIcon from "@/assets/locationzoo.png";
 import callIcon from "@/assets/callzootopia.png";
 import mailIcon from "@/assets/mailzoo.png";
-import linkIcon from "@/assets/linkzoo.png";
-import youtubeIcon from "@/assets/youtubezzoo.png";
-import threadsIcon from "@/assets/threadzoo.png";
+import threadIcon from "@/assets/thread.png";
+import watchIcon from "@/assets/watch.png";
+import instaIcon from "@/assets/insta.png";
+import facebookIcon from "@/assets/facebook.png";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -15,22 +16,22 @@ const Contact = () => {
     {
       icon: locationIcon,
       label: "Address",
-      value: "Zootopia Estate, 1 Royal Boulevard\nCoastal City, India - 400001",
+      value: "KH NO. 28/2, Behind Gorewara Zoo, Pithesur Road, Pithesur, Nagpur-441501, Maharashtra",
     },
     {
       icon: callIcon,
       label: "Reservations",
-      value: "+91 98765 43210\n+91 98765 43211",
+      value: "+91 8460446076\n+91 9371276464",
     },
     {
       icon: mailIcon,
       label: "Email",
-      value: "reservations@zootopia.com\nconcierge@zootopia.com",
+      value: "booking.zootopia@gmail.com\nreservation@zootopia.com",
     },
     {
-      icon: "🕐", // User didn't provide a clock icon, keeping emoji or I could use a generic one if I had it.
+      icon: watchIcon,
       label: "Hours",
-      value: "Resort: 24 / 7\nLounge: Tue–Sun, 6pm–Late",
+      value: "Resort · Check-In: 4:00 PM | Check-Out: 11:30 AM\nRestaurant · 4:00 PM – 11:30 PM\nWaterpark · Entry: 9:00 AM | Exit: 7:00 PM",
     },
   ];
 
@@ -65,17 +66,17 @@ const Contact = () => {
               {contactDetails.map((detail, i) => (
                 <div
                   key={i}
-                  className="flex gap-5 p-5 rounded-sm transition-all duration-300 group"
+                  className="flex gap-5 p-5 rounded-sm transition-all duration-300 group items-start"
                   style={{
                     border: "1px solid hsla(44,85%,55%,0.15)",
                     background: "hsl(var(--card))",
                   }}
                 >
-                  <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                  <div className="w-18 h-18 flex items-start justify-center flex-shrink-0 pt-1">
                     {typeof detail.icon === 'string' && detail.icon.length < 5 ? (
                       <span className="text-xl">{detail.icon}</span>
                     ) : (
-                      <img src={detail.icon} alt={detail.label} className="w-7 h-7 object-contain" />
+                      <img src={detail.icon} alt={detail.label} className="w-16 h-16 object-contain" />
                     )}
                   </div>
                   <div>
@@ -97,20 +98,20 @@ const Contact = () => {
               <p className="section-label mb-4" style={{ color: "hsl(var(--gold-dark))" }}>Follow Our Story</p>
               <div className="flex gap-3">
                 {[
-                  { label: "LinkedIn", icon: linkIcon },
-                  { label: "YouTube", icon: youtubeIcon },
-                  { label: "Threads", icon: threadsIcon },
+                  { label: "Instagram", icon: instaIcon },
+                  { label: "Facebook", icon: facebookIcon },
+                  { label: "Thread", icon: threadIcon },
                 ].map((social) => (
                   <button
                     key={social.label}
-                    className="w-11 h-11 flex items-center justify-center rounded-sm transition-all duration-300 hover:-translate-y-1"
+                    className="w-14 h-14 flex items-center justify-center rounded-sm transition-all duration-300 hover:-translate-y-1"
                     style={{
                       border: "1px solid hsla(44,85%,55%,0.25)",
                       background: "hsl(var(--card))",
                     }}
                     title={social.label}
                   >
-                    <img src={social.icon} alt={social.label} className="w-7 h-7 object-contain" />
+                    <img src={social.icon} alt={social.label} className="w-10 h-10 object-contain" />
                   </button>
                 ))}
               </div>
@@ -130,7 +131,7 @@ const Contact = () => {
             }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823322!2d72.74109999999999!3d19.082502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.5!2d79.0317197!3d21.2200992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c35da9c6a7a3%3A0x29bb6098e9d46006!2sZootopia+Restaurant+by+Baig+Farms!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
@@ -145,7 +146,7 @@ const Contact = () => {
               style={{ border: "1px solid hsla(44,85%,55%,0.25)" }}
             >
               <p className="section-label mb-0.5" style={{ color: "hsl(var(--gold))" }}>Zootopia Estate</p>
-              <p className="font-body text-xs" style={{ color: "hsla(44,30%,92%,0.7)" }}>Royal Boulevard, Coastal City</p>
+              <p className="font-body text-xs" style={{ color: "hsla(44,30%,92%,0.7)" }}>Pithesur, Nagpur - 441501</p>
             </div>
           </motion.div>
         </div>

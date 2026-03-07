@@ -1,7 +1,7 @@
 import logoEmblem from "@/assets/logo-emblem.png";
-import linkIcon from "@/assets/linkzoo.png";
-import youtubeIcon from "@/assets/youtubezzoo.png";
-import threadsIcon from "@/assets/threadzoo.png";
+import insta from "@/assets/insta.png";
+import facebook from "@/assets/facebook.png";
+import thread from "@/assets/thread.png";
 
 const footerLinks = {
   Experience: ["Fine Dining", "Lounge Bar", "Sunset Terrace", "Chef's Table", "Wine Cellar"],
@@ -16,10 +16,10 @@ const Footer = () => {
   };
 
   const socialIcons = [
-    { src: linkIcon, alt: "LinkedIn" },
-    { src: youtubeIcon, alt: "YouTube" },
-    { src: threadsIcon, alt: "Threads" }
-  ];
+  { src: insta, alt: "Instagram" },
+  { src: facebook, alt: "Facebook" },
+  { src: thread, alt: "Threads" },
+];
 
   return (
     <footer
@@ -62,13 +62,13 @@ const Footer = () => {
               {socialIcons.map((icon, i) => (
                 <button
                   key={i}
-                  className="w-9 h-9 flex items-center justify-center rounded-sm transition-all duration-300 hover:-translate-y-1"
+                  className="w-10 h-10 flex items-center justify-center rounded-sm transition-all duration-300 hover:-translate-y-1"
                   style={{
                     border: "1px solid hsla(44,85%,55%,0.2)",
                     background: "hsla(44,85%,55%,0.05)",
                   }}
                 >
-                  <img src={icon.src} alt={icon.alt} className="w-6 h-6 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                  <img src={icon.src} alt={icon.alt} className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
                 </button>
               ))}
             </div>

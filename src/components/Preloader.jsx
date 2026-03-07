@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoEmblem from "@/assets/logo-emblem.png";
+import logo from "@/assets/logo.png";
 
 const Preloader = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -59,7 +59,7 @@ const Preloader = ({ onComplete }) => {
             }}
           >
             <img
-              src={logoEmblem}
+              src={logo}
               alt="Zootopia"
               className="w-20 h-20 object-contain"
             />

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import diningRoom from "@/assets/dining-room.jpg";
-import logoEmblem from "@/assets/logo-emblem.png";
+// import logo from "@/assets/logo.png";
 
 
 const About = () => {
@@ -38,15 +38,15 @@ const About = () => {
             </div>
 
             {/* Floating emblem card */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.4, duration: 0.6 }}
               className="absolute -top-8 -right-8 glass-royal p-5 rounded-sm shadow-gold"
               style={{ border: "1px solid hsla(44,85%,55%,0.25)" }}
             >
-              <img src={logoEmblem} alt="Zootopia" className="w-16 h-16 object-contain" />
-            </motion.div>
+              <img src={logo} alt="Zootopia" className="w-16 h-16 object-contain" />
+            </motion.div> */}
 
           </motion.div>
 

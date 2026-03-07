@@ -5,9 +5,9 @@ import FloatingBook from "@/components/FloatingBook";
 import locationIcon from "@/assets/locationzoo.png";
 import callIcon from "@/assets/callzootopia.png";
 import mailIcon from "@/assets/mailzoo.png";
-import linkIcon from "@/assets/linkzoo.png";
-import youtubeIcon from "@/assets/youtubezzoo.png";
-import threadsIcon from "@/assets/threadzoo.png";
+import instaIcon from "@/assets/insta.png";
+import facebookIcon from "@/assets/facebook.png";
+import threadsIcon from "@/assets/thread.png";
 
 const ContactPage = () => {
     useEffect(() => {
@@ -58,9 +58,9 @@ const ContactPage = () => {
                                 <h3 className="font-serif-luxury text-2xl mb-8">Follow Our Story</h3>
                                 <div className="flex gap-6">
                                     {[
-                                        { label: "LinkedIn", icon: linkIcon },
-                                        { label: "YouTube", icon: youtubeIcon },
-                                        { label: "Threads", icon: threadsIcon },
+                                       { label: "Instagram", icon: instaIcon },
+{ label: "Facebook", icon: facebookIcon },
+{ label: "Threads", icon: threadsIcon },
                                     ].map((social, i) => (
                                         <button key={i} className="w-12 h-12 rounded-full glass flex items-center justify-center text-gold hover:scale-110 transition-all border-gold/20 overflow-hidden p-3" title={social.label}>
                                             <img src={social.icon} alt={social.label} className="w-full h-full object-contain" />

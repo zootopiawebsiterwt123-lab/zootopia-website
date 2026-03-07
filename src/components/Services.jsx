@@ -22,14 +22,14 @@ const services = [
     image: weddingHall,
     link: "#weddings",
   },
-  {
-    icon: "🌿",
-    title: "Luxury Spa",
-    subtitle: "Serenity Sanctuary",
-    description: "Ancient rituals meet modern wellness in our award-winning spa retreat — pure bliss for body and soul.",
-    image: spa,
-    link: "#resort",
-  },
+  // {
+  //   icon: "🌿",
+  //   title: "Luxury Spa",
+  //   subtitle: "Serenity Sanctuary",
+  //   description: "Ancient rituals meet modern wellness in our award-winning spa retreat — pure bliss for body and soul.",
+  //   image: spa,
+  //   link: "#resort",
+  // },
   {
     icon: "🏖️",
     title: "Resort Stay",
@@ -88,7 +88,7 @@ const Services = () => {
         </motion.div>
 
         {/* Service cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <motion.div
               key={i}

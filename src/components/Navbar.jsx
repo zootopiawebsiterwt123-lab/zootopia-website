@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import logoEmblem from "@/assets/logo-emblem.png";
+import logoEmblem from "@/assets/Zootopia logo.png";
+
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -51,30 +52,10 @@ const Navbar = () => {
             className="flex items-center gap-3 group"
           >
             <img
-              src={logoEmblem}
-              alt="Zootopia"
-              className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="flex flex-col items-start">
-              <span
-                className="font-serif-luxury text-xl tracking-[0.2em] leading-none"
-                style={{
-                  background: "var(--gradient-gold)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  backgroundSize: "200% 200%",
-                }}
-              >
-                ZOOTOPIA
-              </span>
-              <span
-                className="font-body text-[9px] tracking-[0.3em]"
-                style={{ color: "hsla(44, 85%, 68%, 0.6)" }}
-              >
-                Resort and Restaurant
-              </span>
-            </div>
+  src={logoEmblem}
+  alt="Zootopia"
+  className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-110 ml-10"
+/>
           </button>
 
           {/* Desktop Links */}
