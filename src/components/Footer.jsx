@@ -4,10 +4,10 @@ import facebook from "@/assets/facebook.png";
 import thread from "@/assets/thread.png";
 
 const footerLinks = {
-  Experience: ["Fine Dining", "Lounge Bar", "Sunset Terrace", "Chef's Table", "Wine Cellar"],
+  Experience: ["Fine Dining", "Lounge Stay", "Sunset Terrace", "Chef's Table"],
   Celebrate: ["Weddings", "Anniversaries", "Corporate Events", "Birthday Galas", "Private Parties"],
-  Stay: ["Ocean Suites", "Garden Villas", "Royal Penthouse", "Spa Packages", "Honeymoon Offers"],
-  Discover: ["About Zootopia", "Gallery", "Press & Awards", "Careers", "Gift Cards"],
+  Stay: ["Luxury Suites", "Garden Villas", "Royal Rooms",  "Honeymoon Offers"],
+  Discover: ["About ", "Gallery", "Press & Awards", , "Gift Cards"],
 };
 
 const Footer = () => {
