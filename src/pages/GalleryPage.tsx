@@ -16,7 +16,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const galleryImages = [
     { id: 1, src: weddingHall, title: "Royal Ballroom", category: "Wedding", size: "large" },
-    { id: 2, src: loungeBg, title: "Nocturne Lounge", category: "Lounge", size: "small" },
+    { id: 2, src: loungeBg, title: "Nocturne Lounge", category: "Resort", size: "small" },
     { id: 3, src: resortPool, title: "Azure Infinity", category: "Resort", size: "medium" },
     { id: 4, src: diningRoom, title: "The Gilded Plate", category: "Restaurant", size: "small" },
     { id: 5, src: weddingGarden, title: "Eden Grove", category: "Wedding", size: "medium" },
@@ -25,14 +25,14 @@ const galleryImages = [
     { id: 8, src: spa, title: "Serenity Spa", category: "Resort", size: "medium" },
     { id: 9, src: heroBg, title: "Zootopia Estate", category: "Resort", size: "small" },
     { id: 10, src: weddingHall, title: "Crystal Gala", category: "Wedding", size: "small" },
-    { id: 11, src: loungeBg, title: "Sunset Terrace", category: "Lounge", size: "medium" },
+    { id: 11, src: loungeBg, title: "Sunset Terrace", category: "Resort", size: "medium" },
     { id: 12, src: resortPool, title: "Palm Breeze", category: "Resort", size: "small" },
     { id: 13, src: diningRoom, title: "Vintage Vault", category: "Restaurant", size: "medium" },
     { id: 14, src: weddingGarden, title: "Forever After", category: "Wedding", size: "small" },
     { id: 15, src: resortSuite, title: "Oasis Loft", category: "Resort", size: "large" },
 ];
 
-const categories = ["All", "Resort", "Wedding", "Restaurant", "Lounge"];
+const categories = ["All", "Resort", "Wedding", "Restaurant"];
 
 const GalleryItem = ({ item, index, onSelect }) => {
     const cardRef = useRef(null);
@@ -132,7 +132,7 @@ const GalleryPage = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[30vh] md:h-[35vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
                 <div className="absolute inset-0">
                     <img
                         src={heroBg}
@@ -146,7 +146,7 @@ const GalleryPage = () => {
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="section-label tracking-[0.4em] mb-4 block text-[10px] md:text-xs"
+                        className="section-label tracking-[0.4em] mb-2 block text-[10px] md:text-xs"
                     >
                         Visual Chronicles
                     </motion.span>
@@ -154,7 +154,7 @@ const GalleryPage = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="font-serif-luxury text-4xl md:text-7xl lg:text-8xl text-gold-gradient mb-6"
+                        className="font-serif-luxury text-4xl md:text-7xl lg:text-8xl text-gold-gradient mb-4"
                     >
                         The Masterpiece Gallery
                     </motion.h1>
@@ -168,7 +168,7 @@ const GalleryPage = () => {
             </section>
 
             {/* Filter Section */}
-            <section className="py-8 md:py-12 bg-royal-deep sticky top-[64px] md:top-[72px] z-30 border-y border-white/5 backdrop-blur-md bg-royal-deep/80">
+            <section className="py-4 md:py-6 bg-royal-deep sticky top-[64px] md:top-[72px] z-30 border-y border-white/5 backdrop-blur-md bg-royal-deep/80">
                 <div className="max-w-7xl mx-auto px-4 md:px-6 overflow-x-auto no-scrollbar">
                     <div className="flex justify-start md:justify-center items-center gap-3 md:gap-4 min-w-max">
                         {categories.map((cat) => (
