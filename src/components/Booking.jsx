@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const occasions = ["Fine Dining", "Wedding Inquiry", "Resort Stay", "Corporate Event", "Spa Treatment", "Special Celebration"];
+const occasions = ["Fine Dining", "Wedding Inquiry", "Resort Stay", "Corporate Event", "Special Celebration"];
 
 const Booking = () => {
   const ref = useRef(null);

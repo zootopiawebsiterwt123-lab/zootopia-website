@@ -6,7 +6,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Wedding from "@/components/Wedding";
 import Lounge from "@/components/Lounge";
-import Resort from "@/components/Resort";
+
 
 import Testimonials from "@/components/Testimonials";
 import Booking from "@/components/Booking";
@@ -34,7 +34,7 @@ const Index = () => {
         <Services />
         <Wedding />
         <Lounge />
-        <Resort />
+      
         
         <Testimonials />
         <Booking />

@@ -2,25 +2,23 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import diningRoom from "@/assets/dining-room.jpg";
 import spa from "@/assets/spa.jpg";
-import weddingHall from "@/assets/wedding-hall.jpg";
-import resortPool from "@/assets/resort-pool.jpg";
+import weddingHall from "@/assets/wedding-hall.jpeg"
+import resortPool from "@/assets/resort-pool.jpeg";
 
-const services = [
+const services = [{
+
+title: "Dining Room",
+subtitle: "Open-Air Fine Dining",
+description: "Enjoy a relaxed dining experience in our airy, arch-framed restaurant with teak wood furnishings, woven pendant lights, and a serene garden backdrop.",
+image: diningRoom,
+link: "#dining"},
   {
-    icon: "🍽️",
-    title: "Fine Dining",
-    subtitle: "The Imperial Table",
-    description: "Multi-course tasting menus curated by Michelin-starred chefs. An experience that tantalizes every sense.",
-    image: diningRoom,
-    link: "#lounge",
-  },
-  {
-    icon: "💍",
+    
     title: "Wedding Hall",
-    subtitle: "Royal Ballroom",
-    description: "Crystal chandeliers, golden arches, and bespoke décor for your most precious celebration.",
+    subtitle: "Your Dream Celebration",
+    description: "An elegantly decorated wedding stage with lush floral arches, golden chandeliers, and luxurious velvet seating — crafted to make your special day truly unforgettable.",
     image: weddingHall,
-    link: "#weddings",
+    link: "#wedding"
   },
   // {
   //   icon: "🌿",
@@ -31,12 +29,12 @@ const services = [
   //   link: "#resort",
   // },
   {
-    icon: "🏖️",
-    title: "Resort Stay",
-    subtitle: "Ocean View Villas",
-    description: "Private pool villas with panoramic ocean views, butler service, and curated experiences just for you.",
-    image: resortPool,
-    link: "#resort",
+   
+title: "Resort Pool",
+subtitle: "Relax & Unwind",
+description: "Dive into our stunning outdoor pool surrounded by lush greenery, lounge chairs, and a tranquil waterfall feature — your perfect escape.",
+image: resortPool,
+link: "#resort",
   },
 ];
 

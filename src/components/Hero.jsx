@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
-import weddingHall from "@/assets/wedding-hall.jpg";
-import resortPool from "@/assets/resort-pool.jpg";
+import weddingHall from "@/assets/wedding-hall.jpeg"
+import resortPool from "@/assets/resort-pool.jpeg"
 import loungeBg from "@/assets/lounge-bg.jpg";
 
 const slides = [

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import weddingHall from "@/assets/wedding-hall.jpg";
-import weddingGarden from "@/assets/wedding-garden.jpg";
+import weddingHall from "@/assets/wedding-hall.jpeg"
+import weddingGarden from "@/assets/wedding-garden.jpeg";
 
 
 const Wedding = () => {

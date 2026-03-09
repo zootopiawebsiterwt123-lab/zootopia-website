@@ -4,10 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
 
-import weddingHall from "@/assets/wedding-hall.jpg";
-import weddingGarden from "@/assets/wedding-garden.jpg";
+import weddingHall from "@/assets/wedding-hall.jpeg"
+import weddingGarden from "@/assets/wedding-garden.jpeg";
 import loungeBg from "@/assets/lounge-bg.jpg";
-import resortPool from "@/assets/resort-pool.jpg";
+import resortPool from "@/assets/resort-pool.jpeg"
 import resortSuite from "@/assets/resort-suite.jpg";
 import diningRoom from "@/assets/dining-room.jpg";
 import spa from "@/assets/spa.jpg";
