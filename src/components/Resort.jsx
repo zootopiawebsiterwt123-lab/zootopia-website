@@ -48,7 +48,8 @@
 //           <p className="section-label mb-4">The Zootopia Resort</p>
 //           <h2
 //             className="font-serif-luxury text-5xl lg:text-6xl font-light leading-tight mb-4"
-//             style={{ color: "hsl(var(--royal-blue-deep))" }}
+//             style={{ color: "hsl(var(--royal-blue-deep)
+// )" }}
 //           >
 //             A World Unto Itself,
 //             <br />
