@@ -4,10 +4,10 @@ import loungeBg from "@/assets/lounge-bg.jpg";
 import gourmet from "@/assets/gourmet.jpg";
 
 const menuHighlights = [
-  { course: "Appetizer", name: "Truffle Burrata", desc: "Black truffle shavings, heirloom tomatoes, aged balsamic" },
-  { course: "Main Course", name: "Wagyu Tenderloin", desc: "A5 Japanese Wagyu, bone marrow jus, roasted heritage vegetables" },
-  { course: "Seafood", name: "Lobster Thermidor", desc: "Whole Nova Scotia lobster, cognac cream, gruyère gratin" },
-  { course: "Dessert", name: "Gold Leaf Soufflé", desc: "Valrhona chocolate, 24K gold leaf, tahitian vanilla crème anglaise" },
+  { course: "Appetizer", name: "Chicken Tango", desc: "Crispy golden chicken tenders tossed in a tangy sauce with minimal spices" },
+  { course: "Main Course", name: "Mutton Kasturi", desc: "Tender mutton slow-cooked in aromatic kasturi methi gravy with rich Indian spices" },
+  { course: "Veg Main Course", name: "Mushroom Mutter", desc: "Fresh button mushrooms and green peas simmered in a luscious spiced tomato-cream sauce" },
+  { course: "Dessert", name: "Hot Chocolate Sizzler Brownie", desc: "Warm fudgy brownie served sizzling with hot chocolate sauce and a scoop of vanilla ice cream" },
 ];
 
 const Lounge = () => {
