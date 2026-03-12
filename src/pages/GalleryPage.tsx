@@ -13,6 +13,12 @@ import diningRoom from "@/assets/dining-room.jpg";
 import spa from "@/assets/spa.jpg";
 import gourmet from "@/assets/gourmet.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
+import weddingRoyalBeach from "@/assets/wedding_royal_beach.png";
+import weddingGrandBallroom from "@/assets/wedding_grand_ballroom.png";
+import resortOceanVilla from "@/assets/resort_ocean_villa.png";
+import resortMountainView from "@/assets/resort_mountain_view.png";
+import restaurantTerraceDining from "@/assets/restaurant_terrace_dining.png";
+import restaurantFineCuisine from "@/assets/restaurant_fine_cuisine.png";
 
 const galleryImages = [
     { id: 1, src: weddingHall, title: "Royal Ballroom", category: "Wedding", size: "large" },
@@ -24,12 +30,18 @@ const galleryImages = [
     { id: 7, src: gourmet, title: "Culinary Art", category: "Restaurant", size: "large" },
     { id: 8, src: spa, title: "Serenity Spa", category: "Resort", size: "medium" },
     { id: 9, src: heroBg, title: "Zootopia Estate", category: "Resort", size: "small" },
-    { id: 10, src: weddingHall, title: "Crystal Gala", category: "Wedding", size: "small" },
-    { id: 11, src: loungeBg, title: "Sunset Terrace", category: "Resort", size: "medium" },
-    { id: 12, src: resortPool, title: "Palm Breeze", category: "Resort", size: "small" },
-    { id: 13, src: diningRoom, title: "Vintage Vault", category: "Restaurant", size: "medium" },
-    { id: 14, src: weddingGarden, title: "Forever After", category: "Wedding", size: "small" },
-    { id: 15, src: resortSuite, title: "Oasis Loft", category: "Resort", size: "large" },
+    { id: 10, src: weddingRoyalBeach, title: "Seaside Serenity", category: "Wedding", size: "small" },
+    { id: 11, src: weddingGrandBallroom, title: "Imperial Gala", category: "Wedding", size: "medium" },
+    { id: 12, src: resortOceanVilla, title: "Oceanic Retreat", category: "Resort", size: "small" },
+    { id: 13, src: resortMountainView, title: "Summit Sanctuary", category: "Resort", size: "medium" },
+    { id: 14, src: restaurantTerraceDining, title: "Starlight Terrace", category: "Restaurant", size: "small" },
+    { id: 15, src: restaurantFineCuisine, title: "Epicurean Canvas", category: "Restaurant", size: "large" },
+    { id: 16, src: weddingHall, title: "Crystal Gala", category: "Wedding", size: "small" },
+    { id: 17, src: loungeBg, title: "Sunset Terrace", category: "Resort", size: "medium" },
+    { id: 18, src: resortPool, title: "Palm Breeze", category: "Resort", size: "small" },
+    { id: 19, src: diningRoom, title: "Vintage Vault", category: "Restaurant", size: "medium" },
+    { id: 20, src: weddingGarden, title: "Forever After", category: "Wedding", size: "small" },
+    { id: 21, src: resortSuite, title: "Oasis Loft", category: "Resort", size: "large" },
 ];
 
 const categories = ["All", "Resort", "Wedding", "Restaurant"];
@@ -211,7 +223,7 @@ const GalleryPage = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="font-serif-luxury text-4xl md:text-7xl lg:text-8xl text-gold-gradient mb-4"
+                        className="font-serif-luxury text-3xl md:text-5xl lg:text-6xl text-gold-gradient mb-4"
                     >
                         The Masterpiece Gallery
                     </motion.h1>
@@ -253,7 +265,7 @@ const GalleryPage = () => {
             </section>
 
             {/* Gallery Grid */}
-            <section className="py-20 md:py-40 max-w-7xl mx-auto px-6 md:px-10" ref={containerRef}>
+            <section className="py-10 md:py-20 max-w-7xl mx-auto px-6 md:px-10" ref={containerRef}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                     <AnimatePresence mode="popLayout">
                         {filteredImages.map((item, index) => (
@@ -283,18 +295,18 @@ const GalleryPage = () => {
                             className="relative max-w-6xl w-full max-h-screen flex flex-col items-center justify-center"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img
-                                src={selectedImage.src}
-                                alt={selectedImage.title}
-                                className="max-w-full max-h-[70vh] md:max-h-[75vh] object-contain shadow-2xl rounded-sm border border-white/10"
-                            />
-                            <div className="mt-6 md:mt-8 text-center bg-royal-deep/50 p-6 backdrop-blur-md rounded-lg border border-white/5 max-w-xl w-full mx-4">
+                            <div className="mb-6 md:mb-8 text-center bg-royal-deep/50 p-6 backdrop-blur-md rounded-lg border border-white/5 max-w-xl w-full mx-4">
                                 <span className="section-label text-gold mb-2 block text-[10px] md:text-xs">{selectedImage.category}</span>
                                 <h2 className="font-serif-luxury text-2xl md:text-4xl text-white mb-4">
                                     {selectedImage.title}
                                 </h2>
                                 <div className="w-16 md:w-20 h-0.5 bg-gradient-gold mx-auto" />
                             </div>
+                            <img
+                                src={selectedImage.src}
+                                alt={selectedImage.title}
+                                className="max-w-full max-h-[70vh] md:max-h-[75vh] object-contain shadow-2xl rounded-sm border border-white/10"
+                            />
 
                             <button
                                 onClick={() => setSelectedImage(null)}
