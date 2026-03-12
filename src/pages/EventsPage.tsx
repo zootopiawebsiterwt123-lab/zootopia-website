@@ -1,10 +1,17 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
-import { MoveRight, Star, Calendar, MapPin } from "lucide-react";
+import { MoveRight, Star, Calendar, MapPin, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+import weddingHall from "@/assets/wedding-hall.jpeg";
+import weddingGrandBallroom from "@/assets/wedding_grand_ballroom.png";
+import loungeBg from "@/assets/lounge-bg.jpg";
 
 const EventsPage = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -13,22 +20,29 @@ const EventsPage = () => {
         {
             title: "Royal Weddings",
             description: "Exchange vows in a setting of unparalleled elegance. Our grand ballroom and lush gardens provide the perfect backdrop for your love story.",
-            image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+            image: weddingHall,
             features: ["Up to 500 guests", "Custom floral design", "Gourmet catering"]
         },
         {
-            title: "Gala Dinners",
-            description: "Host prestigious corporate events and celebratory banquets with sophisticated service and exquisite culinary experiences.",
-            image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop",
-            features: ["State-of-the-art AV", "Wine pairing", "Private entrance"]
+            title: "Corporate Celebrations",
+            description: "Elevate your professional milestones with sophisticated corporate events, award ceremonies, and high-impact celebrations handled with precision.",
+            image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            features: ["State-of-the-art AV", "Executive catering", "Private entrance"]
         },
         {
             title: "Private Celebrations",
-            description: "From milestone birthdays to intimate anniversaries, create lasting memories in our exclusive private dining rooms.",
-            image: "https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=2070&auto=format&fit=crop",
+            description: "From milestone birthdays to intimate anniversaries, create lasting memories in our exclusive private dining rooms or garden terraces.",
+            image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             features: ["Themed decor", "Live music options", "Personalized service"]
         }
     ];
+
+    const scrollToContact = () => {
+        const section = document.getElementById("inquiry-section");
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     return (
         <div className="bg-royal-deep min-h-screen text-ivory">
@@ -54,7 +68,7 @@ const EventsPage = () => {
                         Where every detail is orchestrated to perfection, creating moments that transcend time.
                     </p>
                     <div className="mt-10">
-                        <button className="btn-luxury-gold px-10 py-4">Inquire Now</button>
+                        <button onClick={scrollToContact} className="btn-luxury-gold px-10 py-4">Inquire Now</button>
                     </div>
                 </div>
             </section>
@@ -123,7 +137,7 @@ const EventsPage = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className="flex items-center gap-3 font-body text-xs tracking-widest uppercase text-gold hover:translate-x-2 transition-transform duration-300">
+                                    <button onClick={scrollToContact} className="flex items-center gap-3 font-body text-xs tracking-widest uppercase text-gold hover:translate-x-2 transition-transform duration-300">
                                         Discover More <MoveRight className="w-4 h-4" />
                                     </button>
                                 </div>
@@ -134,19 +148,102 @@ const EventsPage = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 px-6 bg-gold relative overflow-hidden text-royal-deep">
-                <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <h2 className="font-serif-luxury text-4xl md:text-5xl mb-8">Ready to Begin Your Story?</h2>
-                    <p className="text-xl mb-10 opacity-90">
-                        Contact our events team to schedule a private tour of our luxury venues.
-                    </p>
-                    <button className="px-12 py-4 bg-royal-deep text-gold rounded-sm uppercase tracking-widest font-bold hover:bg-royal transition-colors duration-300">
-                        Contact Events Team
-                    </button>
+            <section id="inquiry-section" className="relative py-32 px-6 overflow-hidden min-h-[500px] flex items-center justify-center">
+                <div
+                    className="absolute inset-0 z-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url('https://media.istockphoto.com/id/2223681047/photo/a-room-with-a-beautiful-sparkling-chandelier.webp?a=1&b=1&s=612x612&w=0&k=20&c=rDRQPHqUBKPhU_roNEwzFiXyS2ZFig1AT9XyaV9fJXI=')` }}
+                >
+                    <div className="absolute inset-0 bg-royal-deep/85 backdrop-blur-[2px]" />
                 </div>
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-royal-deep/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+
+                <div className="max-w-4xl mx-auto text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="font-serif-luxury text-4xl md:text-5xl mb-8 text-ivory">Ready to Begin Your Story?</h2>
+                        <p className="text-xl mb-10 text-ivory/80 leading-relaxed max-w-2xl mx-auto">
+                            Whether it's a grand wedding or a strategic corporate milestone, our team is ready to orchestrate your vision into reality.
+                        </p>
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="px-12 py-4 btn-luxury-gold uppercase tracking-widest font-bold"
+                        >
+                            Contact Events Team
+                        </button>
+                    </motion.div>
+                </div>
             </section>
+
+            {/* Inquiry Modal */}
+            <AnimatePresence>
+                {isModalOpen && (
+                    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute inset-0 bg-black/95 backdrop-blur-xl"
+                            onClick={() => setIsModalOpen(false)}
+                        />
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            className="relative w-full max-w-2xl glass-royal p-8 md:p-12 mt-10 rounded-sm border border-gold/20 shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setIsModalOpen(false)}
+                                className="absolute top-6 right-6 text-gold hover:scale-110 transition-transform z-50"
+                            >
+                                <X className="w-6 h-6" />
+                            </button>
+
+                            <div className="text-center mb-10">
+                                <span className="section-label mb-2 block">Event Inquiry</span>
+                                <h2 className="font-serif-luxury text-3xl md:text-4xl text-white">Let's Craft Your Event</h2>
+                            </div>
+
+                            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setIsModalOpen(false); alert("Inquiry sent successfully!"); }}>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] uppercase tracking-widest text-gold-light opacity-70">Full Name</label>
+                                        <input required type="text" className="w-full bg-white/5 border border-white/10 p-4 text-ivory focus:border-gold outline-none transition-colors" placeholder="John Doe" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] uppercase tracking-widest text-gold-light opacity-70">Email Address</label>
+                                        <input required type="email" className="w-full bg-white/5 border border-white/10 p-4 text-ivory focus:border-gold outline-none transition-colors" placeholder="john@example.com" />
+                                    </div>
+                                </div>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] uppercase tracking-widest text-gold-light opacity-70">Phone Number</label>
+                                        <input required type="tel" className="w-full bg-white/5 border border-white/10 p-4 text-ivory focus:border-gold outline-none transition-colors" placeholder="+91 00000 00000" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] uppercase tracking-widest text-gold-light opacity-70">Event Type</label>
+                                        <input required type="text" className="w-full bg-white/5 border border-white/10 p-4 text-ivory focus:border-gold outline-none transition-colors" placeholder="e.g. Corporate Gala, Birthday" />
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] uppercase tracking-widest text-gold-light opacity-70">Expected Guests</label>
+                                    <input required type="text" className="w-full bg-white/5 border border-white/10 p-4 text-ivory focus:border-gold outline-none transition-colors" placeholder="e.g. 150 guests" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] uppercase tracking-widest text-gold-light opacity-70">Event Details</label>
+                                    <textarea rows={4} className="w-full bg-white/5 border border-white/10 p-4 text-ivory focus:border-gold outline-none transition-colors resize-none" placeholder="Tell us more about your vision..." />
+                                </div>
+                                <button type="submit" className="w-full py-5 btn-luxury-gold font-bold tracking-widest uppercase">
+                                    Submit Inquiry
+                                </button>
+                            </form>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
 
             <Footer />
             <FloatingBook />
