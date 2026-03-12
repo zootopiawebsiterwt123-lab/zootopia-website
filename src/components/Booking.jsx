@@ -216,7 +216,7 @@ const Booking = () => {
                   Send Reservation Request
                 </button>
                 <p className="font-body text-xs" style={{ color: "hsla(44,30%,92%,0.4)" }}>
-                  Or call us: <span style={{ color: "hsl(var(--gold))" }}>+91 98765 43210</span>
+                  Or call us: <span style={{ color: "hsl(var(--gold))" }}>+91 9371276464</span>
                 </p>
               </div>
             </form>

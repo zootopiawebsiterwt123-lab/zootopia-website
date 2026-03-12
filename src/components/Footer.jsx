@@ -1,7 +1,9 @@
-import logoEmblem from "@/assets/logo-emblem.png";
+import logo from "@/assets/Zootopia logo.png";
 import insta from "@/assets/insta.png";
 import facebook from "@/assets/facebook.png";
 import thread from "@/assets/thread.png";
+import X from "@/assets/X.png"
+
 
 const footerLinks = {
   Experience: ["Fine Dining", "Lounge Stay", "Sunset Terrace", "Chef's Table"],
@@ -16,10 +18,11 @@ const Footer = () => {
   };
 
   const socialIcons = [
-  { src: insta, alt: "Instagram" },
-  { src: facebook, alt: "Facebook" },
-  { src: thread, alt: "Threads" },
-];
+    { src: insta, alt: "Instagram", href: "https://www.instagram.com/zootopiabybaigfarms?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+    { src: facebook, alt: "Facebook", href: "https://www.facebook.com/people/Zootopia/61577093454896/?locale=en_GB#" },
+    { src: thread, alt: "Threads", href: "https://www.threads.com/@zootopiabybaigfarms" },
+    { src: X, alt: "Twitter", href: "https://x.com/ZootopiaFarms" },
+  ];
 
   return (
     <footer
@@ -33,35 +36,21 @@ const Footer = () => {
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <img src={logoEmblem} alt="Zootopia" className="w-12 h-12 object-contain" />
-              <div>
-                <p
-                  className="font-serif-luxury text-2xl tracking-[0.15em]"
-                  style={{
-                    background: "var(--gradient-gold)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    backgroundSize: "200% 200%",
-                  }}
-                >
-                  ZOOTOPIA
-                </p>
-                <p className="font-body text-[9px] tracking-[0.25em]" style={{ color: "hsla(44,85%,55%,0.5)" }}>
-                  LUXURY RESORT
-                </p>
-              </div>
+            <div className="mb-5">
+              <img src={logo} alt="Zootopia" className="w-48 object-contain" />
             </div>
             <p className="font-body text-sm leading-relaxed mb-6" style={{ color: "hsla(44,30%,92%,0.45)" }}>
-              Where timeless elegance meets extraordinary hospitality. An icon of luxury since 1999.
+              Where timeless elegance meets extraordinary hospitality. An icon of luxury since 2005.
             </p>
 
             {/* Social icons */}
             <div className="flex gap-3">
               {socialIcons.map((icon, i) => (
-                <button
+                <a
                   key={i}
+                  href={icon.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center rounded-sm transition-all duration-300 hover:-translate-y-1"
                   style={{
                     border: "1px solid hsla(44,85%,55%,0.2)",
@@ -69,7 +58,7 @@ const Footer = () => {
                   }}
                 >
                   <img src={icon.src} alt={icon.alt} className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-                </button>
+                </a>
               ))}
             </div>
           </div>

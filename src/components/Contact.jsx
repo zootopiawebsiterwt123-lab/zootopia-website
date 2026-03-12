@@ -7,6 +7,7 @@ import threadIcon from "@/assets/thread.png";
 import watchIcon from "@/assets/watch.png";
 import instaIcon from "@/assets/insta.png";
 import facebookIcon from "@/assets/facebook.png";
+import X from "@/assets/X.png"
 
 const Contact = () => {
   const ref = useRef(null);
@@ -21,7 +22,7 @@ const Contact = () => {
     {
       icon: callIcon,
       label: "Reservations",
-      value: "+91 8460446076\n+91 9371276464",
+      value: "+91 8460446076\n+91 94236 37786",
     },
     {
       icon: mailIcon,
@@ -33,6 +34,13 @@ const Contact = () => {
       label: "Hours",
       value: "Resort · Check-In: 4:00 PM | Check-Out: 11:30 AM\nRestaurant · 4:00 PM – 11:30 PM\nWaterpark · Entry: 9:00 AM | Exit: 7:00 PM",
     },
+  ];
+
+  const socialLinks = [
+    { label: "Instagram", icon: instaIcon, href: "https://instagram.com" },
+    { label: "Facebook", icon: facebookIcon, href: "https://facebook.com" },
+    { label: "Thread", icon: threadIcon, href: "https://threads.net" },
+    { label: "X", icon: X, href: "https://x.com/ZootopiaFarms" },
   ];
 
   return (
@@ -97,13 +105,12 @@ const Contact = () => {
             <div>
               <p className="section-label mb-4" style={{ color: "hsl(var(--gold-dark))" }}>Follow Our Story</p>
               <div className="flex gap-3">
-                {[
-                  { label: "Instagram", icon: instaIcon },
-                  { label: "Facebook", icon: facebookIcon },
-                  { label: "Thread", icon: threadIcon },
-                ].map((social) => (
-                  <button
+                {socialLinks.map((social) => (
+                  <a
                     key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-14 h-14 flex items-center justify-center rounded-sm transition-all duration-300 hover:-translate-y-1"
                     style={{
                       border: "1px solid hsla(44,85%,55%,0.25)",
@@ -112,7 +119,7 @@ const Contact = () => {
                     title={social.label}
                   >
                     <img src={social.icon} alt={social.label} className="w-10 h-10 object-contain" />
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
