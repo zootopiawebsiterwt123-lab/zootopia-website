@@ -69,11 +69,9 @@ const About = () => {
             </h2>
 
             <p className="font-body text-base leading-relaxed mb-5" style={{ color: "hsl(var(--muted-foreground))" }}>
-              Zootopia was born from a singular vision — to create a sanctuary where exceptional hospitality meets timeless elegance. Nestled amidst lush landscapes with ocean vistas, our estate offers an unparalleled fusion of modern luxury and classical grandeur.
-            </p>
+Zootopia was born from a singular vision — where sun-bleached arches and tropical greenery frame every unforgettable moment. Set across a sprawling estate adorned with hand-laid mosaic courtyards and golden lantern-lit terraces, we bring together the warmth of coastal grandeur with heartfelt, personal service.            </p>
             <p className="font-body text-base leading-relaxed mb-10" style={{ color: "hsl(var(--muted-foreground))" }}>
-              From our award-winning fine dining restaurant to our exquisite wedding ballrooms and serene resort villas, every corner of Zootopia tells a story of meticulous craftsmanship and heartfelt service.
-            </p>
+From our open-air fine dining restaurant — where bold, hand-crafted flavours are plated with artistry — to our breathtaking wedding venues that span enchanted garden alcoves and opulent floral ballrooms, every space at Zootopia is a world unto itself. Unwind by our resort pool, nestled beneath swaying palms, or celebrate life's most cherished milestones beneath glittering chandeliers and cascading blooms. This is not just a destination — it is a feeling you carry home.            </p>
 
             {/* Ornament + CTA */}
             <div className="flex items-center gap-4 mb-10">
