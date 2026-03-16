@@ -18,7 +18,9 @@ const AboutPage = () => {
             <section className="pt-40 pb-24 px-6 text-center">
                 <div className="max-w-4xl mx-auto animate-fade-up">
                     <img src={logoEmblem} alt="Zootopia" className="w-20 h-20 mx-auto mb-10 animate-float" />
-                    <span className="section-label mb-6 block text-gold-dark">Our Story</span>
+                    <span className="section-label mb-6 block text-gol
+                    
+                    d-dark">Our Story</span>
                     <h1 className="font-serif-luxury text-5xl md:text-7xl mb-12 leading-tight">
                         Legendary Hospitality, <br /> Redefined for the Modern Era.
                     </h1>

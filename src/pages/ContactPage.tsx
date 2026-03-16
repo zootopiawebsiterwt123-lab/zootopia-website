@@ -15,6 +15,10 @@ const ContactPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const toSentenceCase = (value: string) => {
+  return value.charAt(0).toUpperCase() + value.slice(1);
+};
+
   return (
     <div className="bg-royal-deep min-h-screen text-ivory">
       <Navbar />
@@ -213,6 +217,9 @@ const ContactPage = () => {
                       <input
                         type="text"
                         placeholder="Your Name"
+                         onChange={(e) => {
+    e.target.value = toSentenceCase(e.target.value);
+  }}
                         className="w-full bg-royal-deep/50 border border-gold/20 p-4 font-body text-sm tracking-widest  focus:border-gold outline-none transition-colors"
                       />
                     </div>
@@ -246,6 +253,9 @@ const ContactPage = () => {
                     <textarea
                       rows={5}
                       placeholder="How may we assist you?"
+                       onChange={(e) => {
+    e.target.value = toSentenceCase(e.target.value);
+  }}
                       className="w-full bg-royal-deep/50 border border-gold/20 p-4 font-body text-sm tracking-widest focus:border-gold outline-none transition-colors resize-none"
                     />
                   </div>
