@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import weddingHall from "@/assets/wedding-hall.jpeg"
 import resortPool from "@/assets/resort-pool.jpeg"
@@ -26,7 +27,7 @@ const slides = [
     image: resortPool,
     eyebrow: "Resort Experience",
     title: "Paradise Awaits\nBeyond the Horizon",
-    subtitle: "Infinity pools, sun-kissed shores, and impeccable service — your perfect escape from the ordinary.",
+    subtitle: "Where nature, comfort, and unforgettable moments come together, welcome to Zootopia Resort.",
     cta: "Discover the Resort",
     ctaLink: "#resort",
   },
@@ -43,6 +44,7 @@ const slides = [
 const Hero = () => {
   const [current, setCurrent] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -184,19 +186,21 @@ const Hero = () => {
                 className="flex flex-wrap gap-4"
               >
                 <button
-                  onClick={() => scrollTo(slide.ctaLink)}
+                  onClick={() => current === 1 ? navigate("/events") : current === 2 ? navigate("/resort") : scrollTo(slide.ctaLink)}
                   className="btn-luxury-outline px-8 py-4 rounded-sm text-xs"
                   style={{ borderColor: "hsla(44,85%,55%,0.6)", color: "hsl(var(--gold-light))" }}
                 >
                   {slide.cta}
                 </button>
-                <button
-                  onClick={() => scrollTo("#booking")}
-                  className="btn-luxury-outline px-8 py-4 rounded-sm text-xs"
-                  style={{ borderColor: "hsla(44,85%,55%,0.6)", color: "hsl(var(--gold-light))" }}
-                >
-                  Reserve a Table
-                </button>
+                {current === 0 && (
+                  <button
+                    onClick={() => scrollTo("#booking")}
+                    className="btn-luxury-outline px-8 py-4 rounded-sm text-xs"
+                    style={{ borderColor: "hsla(44,85%,55%,0.6)", color: "hsl(var(--gold-light))" }}
+                  >
+                    Reserve a Table
+                  </button>
+                )}
               </motion.div>
             </motion.div>
           </AnimatePresence>

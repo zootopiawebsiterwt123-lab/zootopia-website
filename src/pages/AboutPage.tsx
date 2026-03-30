@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
 import logoEmblem from "@/assets/logo-emblem.png";
+import storyimg from "@/assets/storyimg.jpg";
 
 const AboutPage = () => {
     useEffect(() => {
@@ -17,7 +18,9 @@ const AboutPage = () => {
             <section className="pt-40 pb-24 px-6 text-center">
                 <div className="max-w-4xl mx-auto animate-fade-up">
                     <img src={logoEmblem} alt="Zootopia" className="w-20 h-20 mx-auto mb-10 animate-float" />
-                    <span className="section-label mb-6 block text-gold-dark">Our Story</span>
+                    <span className="section-label mb-6 block text-gol
+                    
+                    d-dark">Our Story</span>
                     <h1 className="font-serif-luxury text-5xl md:text-7xl mb-12 leading-tight">
                         Legendary Hospitality, <br /> Redefined for the Modern Era.
                     </h1>
@@ -31,7 +34,7 @@ const AboutPage = () => {
                     <div className="grid md:grid-cols-2 gap-20 items-center">
                         <div className="relative">
                             <img
-                                src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2074&auto=format&fit=crop"
+                                src={storyimg}
                                 alt="Heritage"
                                 className="w-full h-[700px] object-cover rounded-sm shadow-elegant"
                             />
@@ -94,26 +97,6 @@ const AboutPage = () => {
                                 <p className="text-ivory/60 leading-relaxed">{v.desc}</p>
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Team/Heritage Image Block */}
-            <section className="py-32 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <div className="relative h-[600px] group overflow-hidden shadow-elegant">
-                        <img
-                            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
-                            alt="Lobby Area"
-                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                        />
-                        <div className="absolute inset-0 bg-royal-deep/40 flex items-center justify-center">
-                            <div className="text-center max-w-2xl px-6">
-                                <h2 className="font-serif-luxury text-4xl md:text-6xl text-ivory mb-8">Join the Zootopia Experience</h2>
-                                <p className="text-ivory/80 text-lg mb-10">We invite you to experience the legacy firsthand. A journey of taste, comfort, and legend.</p>
-                                <button className="btn-luxury-gold px-12 py-4">Explore More</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
