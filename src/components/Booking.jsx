@@ -122,10 +122,15 @@ const Booking = () => {
                     style={inputStyle}
                     onFocus={(e) => e.target.style.borderColor = "hsl(var(--gold))"}
                     onBlur={(e) => e.target.style.borderColor = "hsla(44,85%,55%,0.2)"}
-                  />
+             
+                            
+                            
+                            
+                            
+                      />
                 </div>
                 <div>
-                  <label style={labelStyle}>Email Address</label>
+                  <label style={labelStyle}>Email Address</label >
                   <input
                     type="email"
                     name="email"
@@ -149,7 +154,10 @@ const Booking = () => {
                     style={inputStyle}
                     onFocus={(e) => e.target.style.borderColor = "hsl(var(--gold))"}
                     onBlur={(e) => e.target.style.borderColor = "hsla(44,85%,55%,0.2)"}
+
+
                   />
+                  
                 </div>
                 <div>
                   <label style={labelStyle}>Preferred Date</label>
