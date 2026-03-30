@@ -11,25 +11,22 @@ const ResortPage = () => {
 
     const rooms = [
         {
-            name: "The Royal Villa",
-            price: "1,200",
-            description: "Our crown jewel, featuring a private infinity pool, personal butler service, and panoramic garden views.",
+            name: "Heritage Villa",
+            description: "Our crown jewel, featuring a private pool, personalized service, and panoramic garden views.",
             image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop",
-            amenities: ["Private Pool", "24/7 Butler", "Garden Terrace"]
+            amenities: ["Private Pool", "24/7 Service", "Garden Terrace"]
         },
         {
-            name: "Executive Gold Suite",
-            price: "850",
+            name: "Premium Suite",
             description: "Sophisticated modern design meets timeless luxury. Perfect for those who seek comfort with an edge of elegance.",
             image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop",
-            amenities: ["Spa Bath", "Smart Home", "Ocean Scents"]
+            amenities: ["Spa Bath", "Smart Connect", "Aromatic Scents"]
         },
         {
-            name: "Ivory Sanctuary",
-            price: "600",
-            description: "A peaceful retreat designed with minimalist aesthetics and warm textures to provide ultimate tranquility.",
+            name: "Classic Retreat",
+            description: "A peaceful retreat designed with elegant aesthetics and warm textures to provide ultimate tranquility.",
             image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
-            amenities: ["Meditation Zone", "Organic Linens", "Mountain View"]
+            amenities: ["Serene Space", "Premium Linens", "Courtyard View"]
         }
     ];
 
@@ -72,8 +69,8 @@ const ResortPage = () => {
                                 Simplicity is the <br /> Ultimate Sophistication
                             </h2>
                             <p className="text-lg text-royal-deep/60 leading-relaxed mb-10">
-                                At Zootopia, we believe that true luxury is found in the quiet moments.
-                                Our resort is designed to strip away the noise of the world,
+                                At our resort, we believe that true luxury is found in the quiet moments.
+                                Our spaces are designed to strip away the noise of the world,
                                 leaving only beauty, comfort, and unparalleled service.
                             </p>
                             <div className="grid grid-cols-2 gap-8">
@@ -108,6 +105,7 @@ const ResortPage = () => {
             </section>
 
             {/* Room Showcase */}
+            {false && (
             <section className="py-32 bg-royal-deep text-ivory px-6 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
@@ -128,8 +126,8 @@ const ResortPage = () => {
                                     <div className="absolute bottom-8 left-8 right-8">
                                         <div className="flex justify-between items-end">
                                             <div>
-                                                <p className="text-[10px] tracking-[0.3em] uppercase mb-2 opacity-70">Starting From</p>
-                                                <p className="font-serif-luxury text-3xl text-gold">${room.price}<span className="text-sm opacity-50">/night</span></p>
+                                                <p className="text-[10px] tracking-[0.3em] uppercase mb-2 opacity-70">Experience</p>
+                                                <p className="font-serif-luxury text-2xl text-gold">View Details</p>
                                             </div>
                                             <button className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold group-hover:text-royal-deep transition-all duration-300">
                                                 →
@@ -153,6 +151,7 @@ const ResortPage = () => {
                     </div>
                 </div>
             </section>
+            )}
 
             {/* Large Image Scroller Placeholder */}
             <div className="h-[60vh] bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop')" }}>
