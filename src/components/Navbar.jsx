@@ -20,6 +20,10 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const isLightHero = location.pathname === '/resort';
+  const navTextColor = (!scrolled && isLightHero) ? "#0a192f" : "#ffffff";
+  const navBorderColor = (!scrolled && isLightHero) ? "rgba(10, 25, 47, 0.4)" : "hsla(44, 85%, 55%, 0.6)";
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
@@ -65,9 +69,9 @@ const Navbar = () => {
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
                 className="font-body text-[11px] tracking-[0.18em] uppercase transition-all duration-300 relative group"
-                style={{ color: "#ffffff" }}
+                style={{ color: navTextColor }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(var(--gold))")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = navTextColor)}
               >
                 {link.label}
                 <span
@@ -84,8 +88,8 @@ const Navbar = () => {
               onClick={() => handleNavClick("/contact")}
               className="px-6 py-2.5 rounded-sm font-body text-[11px] tracking-[0.18em] transition-all duration-300"
               style={{
-                border: "1px solid hsla(44, 85%, 55%, 0.6)",
-                color: "#ffffff",
+                border: `1px solid ${navBorderColor}`,
+                color: navTextColor,
                 background: "transparent",
               }}
               onMouseEnter={(e) => {
@@ -94,7 +98,7 @@ const Navbar = () => {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#ffffff";
+                e.currentTarget.style.color = navTextColor;
               }}
             >
               Book Now
