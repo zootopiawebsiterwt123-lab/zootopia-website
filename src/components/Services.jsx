@@ -8,11 +8,11 @@ import resortPool from "@/assets/resort-pool.jpeg";
 
 const services = [
   {
-    title: "Dining Room",
-    subtitle: "Open-Air Fine Dining",
+    title: "Restaurant ",
+    subtitle: "Fine Dining",
     description: "Enjoy a relaxed dining experience in our airy, arch-framed restaurant with teak wood furnishings, woven pendant lights, and a serene garden backdrop.",
     image: diningRoom,
-    link: "/events",
+    link: "/restaurant",
   },
   {
     title: "Wedding Hall",
