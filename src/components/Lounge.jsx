@@ -62,14 +62,13 @@ const Lounge = () => {
               Step into our signature lounge — a world of sapphire velvet, golden candlelight, and bespoke cocktails crafted by our master mixologists. Whether you're celebrating a milestone or simply unwinding after a long day, our lounge is your personal sanctuary.
             </p>
             <p className="font-body text-base leading-relaxed mb-10" style={{ color: "hsla(44,30%,92%,0.65)" }}>
-              Open Tuesday through Sunday, 6pm till late. Reservations strongly recommended.
+              Open all week, from 4 PM to 11 PM late. Reservations strongly recommended.
             </p>
 
             <div className="flex flex-wrap gap-6 mb-10">
               {[
-                { label: "Opens", value: "6:00 PM" },
-                { label: "Dress Code", value: "Smart Elegance" },
-                { label: "Covers", value: "60 Guests" },
+                { label: "Opens", value: "4:00 PM" },
+                { label: "Closes", value: "11:00 PM" },
               ].map((item, i) => (
                 <div key={i}>
                   <p className="section-label mb-1" style={{ color: "hsl(var(--gold))" }}>{item.label}</p>
@@ -78,12 +77,40 @@ const Lounge = () => {
               ))}
             </div>
 
-            <button
-              onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
-              className="btn-luxury-gold px-8 py-3.5 rounded-sm"
-            >
-              Reserve Your Table
-            </button>
+            <div className="flex flex-wrap gap-4">
+              <button
+                onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
+                className="btn-luxury-gold px-8 py-3.5 rounded-sm transition-all duration-300"
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = "hsl(44,85%,55%)";
+                  e.currentTarget.style.color = "hsl(222,72%,9%)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = "";
+                  e.currentTarget.style.color = "";
+                }}
+              >
+                Reserve Your Table
+              </button>
+              <button
+                onClick={() => document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })}
+                className="px-8 py-3.5 rounded-sm transition-all duration-300"
+                style={{
+                  border: "1px solid hsla(44,85%,55%,0.5)",
+                  color: "hsl(44,40%,94%)",
+                  fontFamily: "'Lato', sans-serif",
+                  fontWeight: 400,
+                  letterSpacing: "0.15em",
+                  fontSize: "0.75rem",
+                  textTransform: "uppercase",
+                  background: "transparent",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = "hsl(44,85%,55%)"; e.currentTarget.style.color = "hsl(44,85%,55%)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = "hsla(44,85%,55%,0.5)"; e.currentTarget.style.color = "hsl(44,40%,94%)"; }}
+              >
+                Explore Menu
+              </button>
+            </div>
           </motion.div>
 
           {/* Right: menu card + image */}
@@ -112,7 +139,7 @@ const Lounge = () => {
               style={{ border: "1px solid hsla(44,85%,55%,0.2)" }}
             >
               <p className="section-label mb-4" style={{ color: "hsl(var(--gold))" }}>
-                ✦ Tonight's Highlights
+                ✦ Signature Cuisine
               </p>
               <div className="gold-divider mb-5" />
               {menuHighlights.map((item, i) => (
