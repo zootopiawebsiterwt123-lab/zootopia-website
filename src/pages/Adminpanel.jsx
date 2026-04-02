@@ -1,4 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const usePoppins = () => {
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  }, []);
+};
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 const T = {
@@ -12,7 +21,7 @@ const T = {
   ivory: "hsl(44,40%,94%)",
   muted: "hsla(44,30%,92%,0.5)",
   serif: "'Cormorant Garamond', serif",
-  sans: "'Lato', sans-serif",
+  sans: "'Poppins', sans-serif",
 };
 
 // ─── Mock Data ────────────────────────────────────────────────────────────────
@@ -547,6 +556,7 @@ const navItems = [
 
 export default function AdminPanel() {
   const [active, setActive] = useState("dashboard");
+  usePoppins();
 
   const panels = {
     dashboard: <Dashboard />,
@@ -582,7 +592,6 @@ export default function AdminPanel() {
                 width: "100%", padding: "12px 1.5rem", background: "transparent", border: "none",
                 cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative",
                 borderLeft: active === item.id ? `2px solid ${T.gold}` : "2px solid transparent",
-                background: active === item.id ? T.goldDim : "transparent",
               }}
               onMouseEnter={e => { if (active !== item.id) e.currentTarget.style.background = "hsla(44,85%,55%,0.07)"; }}
               onMouseLeave={e => { if (active !== item.id) e.currentTarget.style.background = "transparent"; }}
