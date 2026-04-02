@@ -42,9 +42,15 @@ const galleryImages = [
     { id: 19, src: diningRoom, title: "Vintage Vault", category: "Restaurant", size: "medium" },
     { id: 20, src: weddingGarden, title: "Forever After", category: "Wedding", size: "small" },
     { id: 21, src: resortSuite, title: "Oasis Loft", category: "Resort", size: "large" },
+    { id: 22, src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80", title: "Grand Celebration", category: "Events", size: "large" },
+    { id: 23, src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80", title: "Neon Nights", category: "Events", size: "medium" },
+    { id: 24, src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80", title: "Floral Fantasy", category: "Events", size: "small" },
+    { id: 25, src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80", title: "Evening Soirée", category: "Events", size: "medium" },
+    { id: 26, src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80", title: "Candlelit Gathering", category: "Events", size: "small" },
+    { id: 27, src: "https://images.unsplash.com/photo-1478147427282-58a87a433b2e?w=800&q=80", title: "Cultural Fiesta", category: "Events", size: "large" },
 ];
 
-const categories = ["All", "Resort", "Wedding", "Restaurant"];
+const categories = ["All", "Events","Resort","Restaurant", "Wedding" ];
 
 const GalleryItem = ({ item, index, onSelect }) => {
     const cardRef = useRef(null);
@@ -70,7 +76,6 @@ const GalleryItem = ({ item, index, onSelect }) => {
     const translateZ = useSpring(isHovered && !isTouch ? 60 : 0, springConfig);
     const scale = useSpring(isHovered ? 1.05 : 1, springConfig);
     
-    // Dynamic shadow offsets (opposite to tilt)
     const shadowX = useSpring(isHovered && !isTouch ? mousePos.x * -30 : 0, springConfig);
     const shadowY = useSpring(isHovered && !isTouch ? mousePos.y * -30 : 20, springConfig);
     const shadowOpacity = useSpring(isHovered ? 0.4 : 0.2, springConfig);
@@ -177,7 +182,6 @@ const GalleryItem = ({ item, index, onSelect }) => {
                 </motion.div>
 
                 {/* Multi-Layered Premium Frame */}
-                {/* Beveled edge look */}
                 <div className="absolute inset-0 border border-white/5 pointer-events-none" />
                 <div className="absolute inset-[1px] border border-black/20 pointer-events-none" />
                 <div className="absolute inset-3 border border-gold/10 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
